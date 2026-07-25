@@ -1,0 +1,21 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Data & Download Cache
+data/
+*.csv
+*.zip
+*.tar.gz
+
+# Environment & IDE
+.venv/
+venv/
+ENV/
+.vscode/
+.idea/
+
+# Operating System
+.DS_Store
+Thumbs.db

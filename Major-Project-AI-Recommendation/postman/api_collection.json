@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "a6b89c0d-1234-4567-89ab-cdef01234567",
+		"name": "iNeuBytes AI Recommendation API Tests",
+		"description": "Postman API test suite for Flask AI recommendation web service required by iNeuBytes VIIP Major Project spec.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Health Check Endpoint",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/health",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"health"
+					]
+				},
+				"description": "Verifies that Flask recommendation backend is online and model dataset is loaded."
+			},
+			"response": []
+		},
+		{
+			"name": "2. Recommend Endpoint - Movie Title Search (POST)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": \"Inception\",\n    \"top_n\": 5\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/recommend",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"recommend"
+					]
+				},
+				"description": "Tests content-based movie recommendations given a known title input."
+			},
+			"response": []
+		},
+		{
+			"name": "3. Recommend Endpoint - Natural Language Query (POST)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": \"space exploration drama\",\n    \"top_n\": 5\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/recommend",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"recommend"
+					]
+				},
+				"description": "Tests NLP TF-IDF text query search recommendations."
+			},
+			"response": []
+		},
+		{
+			"name": "4. Error Handling - Empty Query Test (POST)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": \"\",\n    \"top_n\": 5\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/recommend",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"recommend"
+					]
+				},
+				"description": "Verifies that empty input returns HTTP 400 Bad Request instead of crashing with 500."
+			},
+			"response": []
+		}
+	]
+}

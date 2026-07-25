@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineMind AI - Smart Movie & Content Recommender</title>
+    <meta name="description" content="AI-powered full-stack movie recommendation system built with Flask, Scikit-Learn TF-IDF, and modern interactive UI.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-globes">
+        <div class="globe globe-1"></div>
+        <div class="globe globe-2"></div>
+        <div class="globe globe-3"></div>
+    </div>
+
+    <header class="app-header">
+        <div class="logo">
+            <span class="icon">🎬</span>
+            <span class="title">CineMind <span class="badge">AI</span></span>
+        </div>
+        <div class="status-pill" id="serverStatus">
+            <span class="dot pulse"></span>
+            <span id="statusText">Checking Backend...</span>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero-section">
+            <h1 class="hero-title">Discover Movies with <span class="gradient-text">Artificial Intelligence</span></h1>
+            <p class="hero-subtitle">Enter your favorite movie, actor, or describe what you feel like watching. Our NLP model will calculate similarity and recommend the best matches for you.</p>
+            
+            <div class="search-box-card">
+                <form id="recommendForm" class="search-form">
+                    <div class="input-wrapper">
+                        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                        <input type="text" id="queryInput" placeholder="e.g. Inception, Space exploration, Mind-bending thriller..." required autocomplete="off">
+                    </div>
+                    <button type="submit" id="submitBtn" class="primary-btn">
+                        <span>Find Recommendations</span>
+                        <svg class="btn-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                    </button>
+                </form>
+
+                <div class="quick-tags">
+                    <span class="tag-label">Try searching:</span>
+                    <button type="button" class="tag-chip" data-query="Inception">Inception</button>
+                    <button type="button" class="tag-chip" data-query="Space exploration drama">Space Exploration</button>
+                    <button type="button" class="tag-chip" data-query="Superhero action">Superheroes</button>
+                    <button type="button" class="tag-chip" data-query="Animated fantasy adventure">Animation</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Loading State -->
+        <section id="loadingState" class="loading-container hidden">
+            <div class="spinner"></div>
+            <p class="loading-text">Computing TF-IDF Vectors & Cosine Similarities...</p>
+        </section>
+
+        <!-- Error State -->
+        <div id="errorBanner" class="error-banner hidden">
+            <span class="error-icon">⚠️</span>
+            <span id="errorMessage">An error occurred while fetching recommendations.</span>
+        </div>
+
+        <!-- Results Section -->
+        <section id="resultsSection" class="results-section hidden">
+            <div class="results-header">
+                <h2 id="resultsHeading">Recommended Movies</h2>
+                <div class="stats-badge">
+                    <span id="resultCount">0 matches</span>
+                    <span class="divider">•</span>
+                    <span id="responseTime">0ms</span>
+                </div>
+            </div>
+
+            <div id="cardsGrid" class="cards-grid">
+                <!-- Dynamic recommendation cards inserted here -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        <p>iNeuBytes VIIP Major Project — Full-Stack AI Recommendation Service</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
