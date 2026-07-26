@@ -18,8 +18,9 @@ Welcome to the official internship repository for **S. Meghana (ID: INBT020045)*
 | **Task 1** | Computer Vision using CNN Models | [`Task-1-CNN-ComputerVision/`](./Task-1-CNN-ComputerVision) | [`Task1_CNN_ComputerVision.pdf`](./Task1_CNN_ComputerVision.pdf) |
 | **Task 2** | Sentiment Analysis using ML & DL | [`Task-2-Sentiment-Analysis/`](./Task-2-Sentiment-Analysis) | [`Task2_SentimentAnalysis.pdf`](./Task2_SentimentAnalysis.pdf) |
 | **Major Project** | Full-Stack AI Recommendation Web Application | [`Major-Project-AI-Recommendation/`](./Major-Project-AI-Recommendation) | [`MajorProject_FullStackAI.pdf`](./MajorProject_FullStackAI.pdf) |
+| **Minor Project** | Cyber Security: Network Reconnaissance & Assessment | [`Cyber-Security-Minor-Project/`](./Cyber-Security-Minor-Project) | [`Cyber-Security-Minor-Project/docs/Cyber_Security_Minor_Project.pdf`](./Cyber-Security-Minor-Project/docs/Cyber_Security_Minor_Project.pdf) |
 
-📁 All 3 task specification PDFs are also organized inside the [`pdfs/`](./pdfs/) folder.
+📁 All task specification PDFs and project reports are organized inside the repository.
 
 ---
 
@@ -36,6 +37,10 @@ Welcome to the official internship repository for **S. Meghana (ID: INBT020045)*
 ### 3. Major Project: Full-Stack AI Recommendation Web Application
 - **Objective**: Develop and deploy an end-to-end full-stack AI web application featuring a TF-IDF & Cosine Similarity movie recommendation engine with a Flask REST API backend (`/recommend`, `/health`), modern UI, and Postman API collection.
 - **Key Files**: `Major-Project-AI-Recommendation/backend/app.py`, `frontend/index.html`, `postman/api_collection.json`.
+
+### 4. Minor Project: Cyber Security - Network Reconnaissance and Security Assessment
+- **Objective**: Conduct systematic reconnaissance, host discovery (Netdiscover, Nmap), port/service enumeration, OS fingerprinting, traffic analysis (Wireshark), and risk identification on an isolated virtual lab environment (`192.168.56.0/24`).
+- **Key Files**: `Cyber-Security-Minor-Project/README.md`, `scans/`, `scripts/recon_scanner.sh`, `docs/Cyber_Security_Minor_Project.pdf`.
 
 ---
 
@@ -71,7 +76,15 @@ python app.py
 # Open Major-Project-AI-Recommendation/frontend/index.html in a web browser
 ```
 
+### Run Cyber Security Reconnaissance Script
+```bash
+cd Cyber-Security-Minor-Project/scripts
+chmod +x recon_scanner.sh
+sudo ./recon_scanner.sh
+```
+
 ---
 
 ## 📄 License & Certification
-Submitted by **S. Meghana (INBT020045)** for the **iNeuBytes Virtual Internship Program (VIIP)** in Artificial Intelligence.
+Submitted by **S. Meghana (INBT020045)** for Skillentrix Technologies & iNeuBytes Virtual Internship Program.
+
